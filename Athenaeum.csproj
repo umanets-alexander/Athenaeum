@@ -82,6 +82,7 @@
       <DependentUpon>CategoryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
+    <Compile Include="ImageFile.cs" />
     <Compile Include="InformationForm.cs">
       <SubType>Form</SubType>
     </Compile>

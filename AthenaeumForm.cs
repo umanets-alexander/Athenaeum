@@ -25,6 +25,7 @@ namespace Athenaeum
 
         private void AthenaeumForm_Shown(object sender, EventArgs e)
         {
+            ImageFile.DownloadImageGitHub();
             if (File.Exists(filePath) == false)
             {
                 Directory.CreateDirectory("database");

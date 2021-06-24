@@ -41,7 +41,7 @@ namespace Athenaeum
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(13, 13);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(128, 128);
             this.pictureBox1.TabIndex = 0;
@@ -50,7 +50,7 @@ namespace Athenaeum
             // btn_yes
             // 
             this.btn_yes.Location = new System.Drawing.Point(348, 101);
-            this.btn_yes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_yes.Margin = new System.Windows.Forms.Padding(4);
             this.btn_yes.Name = "btn_yes";
             this.btn_yes.Size = new System.Drawing.Size(40, 40);
             this.btn_yes.TabIndex = 1;
@@ -59,7 +59,7 @@ namespace Athenaeum
             // btn_no
             // 
             this.btn_no.Location = new System.Drawing.Point(396, 101);
-            this.btn_no.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_no.Margin = new System.Windows.Forms.Padding(4);
             this.btn_no.Name = "btn_no";
             this.btn_no.Size = new System.Drawing.Size(40, 40);
             this.btn_no.TabIndex = 2;
@@ -70,7 +70,7 @@ namespace Athenaeum
             // 
             this.panel1.Controls.Add(this.labeltext);
             this.panel1.Location = new System.Drawing.Point(149, 13);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(289, 80);
             this.panel1.TabIndex = 3;
@@ -97,7 +97,7 @@ namespace Athenaeum
             this.Controls.Add(this.btn_yes);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MessageForm";
