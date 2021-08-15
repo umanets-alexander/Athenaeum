@@ -16,27 +16,38 @@ namespace Athenaeum
         public MessageForm()
         {
             InitializeComponent();
+            //задаём иконку для окна
             this.Icon = new Icon(Path.GetFullPath(@"icon\message.ico"));
+            //задаём изображения для сообщения и кнопок
             btn_yes.Image = Image.FromFile(Path.GetFullPath(@"icon\message-yes.png"));
             btn_no.Image = Image.FromFile(Path.GetFullPath(@"icon\message-no.png"));
             pictureBox1.Image = Image.FromFile(Path.GetFullPath(@"icon\message-warning.png"));
         }
 
+        //закрытие окна уведомления
         private void btn_no_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        //у каждой процедуры уведомления о удалении свой вариант удаления записи
         public void btn_yes_click(string text, string name, int id)
         {
+            //проверяем чья процедура для удаления записи
             if (text == "CopyrightDelete")
             {
+                //выводим текст в окне об удалении записи
                 labeltext.Text = "Вы действительно хотите удалить запись издательства " + name + "?";
+                //выводим заголовок окна удаления записи
                 this.Text = "Удаление записи издательства " + name;
+                //задаём действие кнопки подтверждения удаления записи
                 btn_yes.Click += (object senders, EventArgs se) =>
                 {
+                    //отправляем запрос на удаление записи
                     SqlQuery.DeleteCategory("Copyright", id);
+                    //обновляем список БД
                     SqlQuery.UpdateCategory("Copyright");
+                    //возвращаемся к просмотру записей закрывая окно удаления записи
                     Close();
                 };
             }

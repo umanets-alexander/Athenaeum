@@ -10,7 +10,7 @@ namespace Athenaeum
 {
     public class SqlQuery
     {
-
+        //статические данные переменных
         static string filepath = AthenaeumForm.filePath;
         static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + filepath + ";Integrated Security=True";
         static SqlConnection sqlConnection = new SqlConnection(connectionString);
@@ -26,6 +26,7 @@ namespace Athenaeum
         static string SubscriberTable = "table SubscriberTable (id int identity (1,1) not null, surname nvarchar(100) not null, name nvarchar(100) not null, patronymic nvarchar(100) null, date_birthday datetime not null, home_Address nvarchar(300) null, passport nvarchar(100) null, place_work nvarchar(100) null, telephone nvarchar(20) null, primary key clustered(id asc))";
         static string LibrianTable = "table LibrianTable (id int identity (1,1) not null, surname nvarchar(100) not null, name nvarchar(100) not null, patronymic nvarchar(100) null, primary key clustered(id asc))";
 
+        //запрос создающий все таблицы в БД
         public static void CreateTable()
         {
             sqlConnection.Open();
@@ -36,6 +37,7 @@ namespace Athenaeum
             sqlConnection.Close();
         }
 
+        //запрос загружающий все данные для просмотра записей
         public static void UpdateCategory(string namecategory)
         {
             sqlConnection.Open();
@@ -75,6 +77,7 @@ namespace Athenaeum
             sqlConnection.Close();
         }
 
+        //запрос для добавления новой записи
         public static void AddCategory(string namecategory, string textcategory_one, string textcategory_two)
         {
             sqlConnection.Open();
@@ -100,6 +103,7 @@ namespace Athenaeum
             sqlConnection.Close();
         }
 
+        //запрос на редактирование записи
         public static void EditingCategory(string namecategory, string textcategory_one, string textcategory_two)
         {
             sqlConnection.Open();
@@ -129,6 +133,7 @@ namespace Athenaeum
             sqlConnection.Close();
         }
 
+        //запрос на удаление записи
         public static void DeleteCategory(string namecategory, int key)
         {
             sqlConnection.Open();

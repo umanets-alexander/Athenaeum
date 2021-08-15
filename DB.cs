@@ -10,6 +10,7 @@ namespace Athenaeum
 {
     public class DB
     {
+        //создание файла БД
         public static void CreateFile(string filename)
         {
             string databaseName = Path.GetFileNameWithoutExtension(filename);

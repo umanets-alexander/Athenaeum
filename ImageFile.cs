@@ -10,12 +10,17 @@ namespace Athenaeum
 {
     public class ImageFile
     {
+        //проверка и загрузка изображений необходимых для полноценной работы с программой
+        //изображения находятся в GitHub
         public static void DownloadImageGitHub()
         {
+            //создаём папку для хранения изображений и иконок icon
             Directory.CreateDirectory("icon");
             WebClient client = new WebClient();
+            //проверяем существование иконки/картинки
             if (Path.GetFullPath(@"icon\message.ico") != null)
             {
+                //скачиваем и сохраняем иконку/картинку в папку icon
                 client.DownloadFile(new Uri("https://raw.githubusercontent.com/umanets-alexander/Athenaeum/main/icon/message.ico"), Path.GetFullPath(@"icon\message.ico"));
             }
             if (Path.GetFullPath(@"icon\category.ico") != null)
