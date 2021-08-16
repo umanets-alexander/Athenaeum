@@ -86,18 +86,26 @@ namespace Athenaeum
             //задаём автоматическую ширину последнего заголовка
             list_table.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             //задаём действие для кнопки добавления новой записи
-            /*btn_add.Click += (object senders, EventArgs se) =>
+            btn_add.Click += (object senders, EventArgs se) =>
             {
-                CategoryAddEditing = new CategoryAddEditingForm();
-                //реализуем форму добавления/редактирования формы
-                CategoryAddEditing.Release_form();
-                //задаём заголовок окну
-                CategoryAddEditing.Text = "Добавление категории выборки - Издательства";
-                //задаём процедуру добавления/редактирования записи
-                CategoryAddEditing.CopyrightAddEditing();
-                //запускаем окно
-                CategoryAddEditing.Show();
-            };
+                InformationAddEditingForm InformationAddEditing;
+                InformationAddEditing = new InformationAddEditingForm();
+                
+                InformationAddEditing.Show();
+                InformationAddEditing.Text = "Добавление данных -  Читатели";
+                InformationAddEditing.ReadersAddEditing();
+                
+
+                /* CategoryAddEditing = new CategoryAddEditingForm();
+                 //реализуем форму добавления/редактирования формы
+                 CategoryAddEditing.Release_form();
+                 //задаём заголовок окну
+                 CategoryAddEditing.Text = "Добавление категории выборки - Издательства";
+                 //задаём процедуру добавления/редактирования записи
+                 CategoryAddEditing.CopyrightAddEditing();
+                 //запускаем окно
+                 CategoryAddEditing.Show();*/
+            };/*
             //задаём действие для кнопки редактирования записи
             btn_editing.Click += (object senders, EventArgs se) =>
             {

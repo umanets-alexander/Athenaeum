@@ -23,7 +23,7 @@ namespace Athenaeum
         static string GenreTable = "table GenreTable (id int identity (1,1) not null, name nvarchar(50) not null, primary key clustered(id asc))";
         static string TranslateTable = "table TranslateTable (id int identity (1,1) not null, name nvarchar(100) not null, primary key clustered(id asc))";
         static string IssuingTable = "table IssuingTable (id int identity (1,1) not null, librian_issue bigint not null, librian_return bigint null, subscriber bigint not null, ISBN bigint not null, date_issue datetime not null, date_return datetime null, primary key clustered(id asc))";
-        static string SubscriberTable = "table SubscriberTable (id int identity (1,1) not null, surname nvarchar(100) not null, name nvarchar(100) not null, patronymic nvarchar(100) null, date_birthday datetime not null, home_Address nvarchar(300) null, passport nvarchar(100) null, place_work nvarchar(100) null, telephone nvarchar(20) null, primary key clustered(id asc))";
+        static string SubscriberTable = "table SubscriberTable (id int identity (1,1) not null, surname nvarchar(100) not null, name nvarchar(100) not null, patronymic nvarchar(100) null, date_birthday  nvarchar(50) not null, home_address nvarchar(300) null, passport nvarchar(100) null, place_work nvarchar(100) null, telephone nvarchar(20) null, primary key clustered(id asc))";
         static string LibrianTable = "table LibrianTable (id int identity (1,1) not null, surname nvarchar(100) not null, name nvarchar(100) not null, patronymic nvarchar(100) null, primary key clustered(id asc))";
 
         //запрос создающий все таблицы в БД
@@ -94,7 +94,7 @@ namespace Athenaeum
                 while (sqlReader.Read())
                 {
                     if (nameinformation == "Readers")
-                        InformationForm.list_table.Rows.Add(Convert.ToString(sqlReader["id"]), Convert.ToString(sqlReader["surname"]) + " " + Convert.ToString(sqlReader["name"]) + " " + Convert.ToString(sqlReader["patronymic"]), Convert.ToString(sqlReader["date_birthday"]), Convert.ToString(sqlReader["home_Address"]), Convert.ToString(sqlReader["passport"]), Convert.ToString(sqlReader["place_work"]), Convert.ToString(sqlReader["telephone"]));
+                        InformationForm.list_table.Rows.Add(Convert.ToString(sqlReader["id"]), Convert.ToString(sqlReader["surname"]) + " " + Convert.ToString(sqlReader["name"]) + " " + Convert.ToString(sqlReader["patronymic"]), Convert.ToString(sqlReader["date_birthday"]), Convert.ToString(sqlReader["home_address"]), Convert.ToString(sqlReader["passport"]), Convert.ToString(sqlReader["place_work"]), Convert.ToString(sqlReader["telephone"]));
                     else
                         InformationForm.list_table.Rows.Add(Convert.ToString(sqlReader["id"]), Convert.ToString(sqlReader["name"]));
                 }
@@ -112,7 +112,7 @@ namespace Athenaeum
         }
 
 
-        //запрос для добавления новой записи
+        //запрос для добавления новой записи категории
         public static void AddCategory(string namecategory, string textcategory_one, string textcategory_two)
         {
             sqlConnection.Open();
@@ -134,6 +134,30 @@ namespace Athenaeum
             }
             else
                 cmd.Parameters.AddWithValue("name", textcategory_one);
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+        }
+
+        //запрос для добавления новой записи информации
+        public static void AddInformation(string nameinformation, string textinformation_one, string textinformation_two, string textinformation_three, string textinformation_four, string textinformation_five, string textinformation_six, string textinformation_seven, string textinformation_eight)
+        {
+            sqlConnection.Open();
+            SqlCommand cmd = new SqlCommand("", sqlConnection);
+            if (nameinformation == "Readers")
+                cmd = new SqlCommand("insert into SubscriberTable (surname, name, patronymic, date_birthday, home_address, passport, place_work, telephone) values (@surname, @name, @patronymic, @date_birthday, @home_address, @passport, @place_work, @telephone)", sqlConnection);
+            if (nameinformation == "Readers")
+            {
+                cmd.Parameters.AddWithValue("surname", textinformation_one);
+                cmd.Parameters.AddWithValue("name", textinformation_two);
+                cmd.Parameters.AddWithValue("patronymic", textinformation_three);
+                cmd.Parameters.AddWithValue("date_birthday", textinformation_four);
+                cmd.Parameters.AddWithValue("home_Address", textinformation_five);
+                cmd.Parameters.AddWithValue("passport", textinformation_six);
+                cmd.Parameters.AddWithValue("place_work", textinformation_seven);
+                cmd.Parameters.AddWithValue("telephone", textinformation_eight);
+            }
+            else
+                cmd.Parameters.AddWithValue("name", textinformation_one);
             cmd.ExecuteNonQuery();
             sqlConnection.Close();
         }
