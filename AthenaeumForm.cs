@@ -42,12 +42,6 @@ namespace Athenaeum
             }
         }
 
-        //открываем окно для просмотра списка типа издания книги
-        private void типИздательстваToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
@@ -117,6 +111,16 @@ namespace Athenaeum
         private void абонентыToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void читателиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InformationForm Information;
+            Information = new InformationForm();
+            Information.Release_form();
+            Information.Readers();
+            Information.Show();
+            SqlQuery.UpdateInformation("Readers");
         }
     }
 }

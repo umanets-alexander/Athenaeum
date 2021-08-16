@@ -37,7 +37,7 @@ namespace Athenaeum
             sqlConnection.Close();
         }
 
-        //запрос загружающий все данные для просмотра записей
+        //запрос загружающий все данные для просмотра записей категорий
         public static void UpdateCategory(string namecategory)
         {
             sqlConnection.Open();
@@ -76,6 +76,41 @@ namespace Athenaeum
             }
             sqlConnection.Close();
         }
+
+        //запрос загружающий все данные для просмотра записей данных
+        public static void UpdateInformation(string nameinformation)
+        {
+            sqlConnection.Open();
+            SqlDataReader sqlReader = null;
+            InformationForm.list_table.Rows.Clear();
+            SqlCommand cmd = new SqlCommand("", sqlConnection); ;
+            if (nameinformation == "Readers")
+                cmd = new SqlCommand("select * from SubscriberTable order by surname", sqlConnection);
+            else 
+                cmd = new SqlCommand("select * from StorageTable order by name", sqlConnection);
+            try
+            {
+                sqlReader = cmd.ExecuteReader();
+                while (sqlReader.Read())
+                {
+                    if (nameinformation == "Readers")
+                        InformationForm.list_table.Rows.Add(Convert.ToString(sqlReader["id"]), Convert.ToString(sqlReader["surname"]) + " " + Convert.ToString(sqlReader["name"]) + " " + Convert.ToString(sqlReader["patronymic"]), Convert.ToString(sqlReader["date_birthday"]), Convert.ToString(sqlReader["home_Address"]), Convert.ToString(sqlReader["passport"]), Convert.ToString(sqlReader["place_work"]), Convert.ToString(sqlReader["telephone"]));
+                    else
+                        InformationForm.list_table.Rows.Add(Convert.ToString(sqlReader["id"]), Convert.ToString(sqlReader["name"]));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (sqlReader != null)
+                    sqlReader.Close();
+            }
+            sqlConnection.Close();
+        }
+
 
         //запрос для добавления новой записи
         public static void AddCategory(string namecategory, string textcategory_one, string textcategory_two)

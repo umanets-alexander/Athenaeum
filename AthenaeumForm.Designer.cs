@@ -91,35 +91,35 @@ namespace Athenaeum
             // издательстваToolStripMenuItem
             // 
             this.издательстваToolStripMenuItem.Name = "издательстваToolStripMenuItem";
-            this.издательстваToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.издательстваToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.издательстваToolStripMenuItem.Text = "Издательства";
             this.издательстваToolStripMenuItem.Click += new System.EventHandler(this.издательстваToolStripMenuItem_Click);
             // 
             // местаХраненияToolStripMenuItem
             // 
             this.местаХраненияToolStripMenuItem.Name = "местаХраненияToolStripMenuItem";
-            this.местаХраненияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.местаХраненияToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.местаХраненияToolStripMenuItem.Text = "Места хранения";
             this.местаХраненияToolStripMenuItem.Click += new System.EventHandler(this.местаХраненияToolStripMenuItem_Click);
             // 
             // жанрToolStripMenuItem
             // 
             this.жанрToolStripMenuItem.Name = "жанрToolStripMenuItem";
-            this.жанрToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.жанрToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.жанрToolStripMenuItem.Text = "Жанры";
             this.жанрToolStripMenuItem.Click += new System.EventHandler(this.жанрToolStripMenuItem_Click);
             // 
             // авторыToolStripMenuItem
             // 
             this.авторыToolStripMenuItem.Name = "авторыToolStripMenuItem";
-            this.авторыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.авторыToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.авторыToolStripMenuItem.Text = "Авторы";
             this.авторыToolStripMenuItem.Click += new System.EventHandler(this.авторыToolStripMenuItem_Click);
             // 
             // переводчикиToolStripMenuItem
             // 
             this.переводчикиToolStripMenuItem.Name = "переводчикиToolStripMenuItem";
-            this.переводчикиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.переводчикиToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.переводчикиToolStripMenuItem.Text = "Переводчики";
             this.переводчикиToolStripMenuItem.Click += new System.EventHandler(this.переводчикиToolStripMenuItem_Click);
             // 
@@ -138,6 +138,7 @@ namespace Athenaeum
             this.читателиToolStripMenuItem.Name = "читателиToolStripMenuItem";
             this.читателиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.читателиToolStripMenuItem.Text = "Читатели";
+            this.читателиToolStripMenuItem.Click += new System.EventHandler(this.читателиToolStripMenuItem_Click);
             // 
             // библиотекариToolStripMenuItem
             // 
@@ -199,13 +200,13 @@ namespace Athenaeum
             // сохранитьБДToolStripMenuItem
             // 
             this.сохранитьБДToolStripMenuItem.Name = "сохранитьБДToolStripMenuItem";
-            this.сохранитьБДToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьБДToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.сохранитьБДToolStripMenuItem.Text = "Сохранить БД";
             // 
             // загрузитьБДToolStripMenuItem
             // 
             this.загрузитьБДToolStripMenuItem.Name = "загрузитьБДToolStripMenuItem";
-            this.загрузитьБДToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.загрузитьБДToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.загрузитьБДToolStripMenuItem.Text = "Загрузить БД";
             // 
             // справкаToolStripMenuItem
